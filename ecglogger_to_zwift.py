@@ -9,7 +9,7 @@ from datetime import datetime
 # If you want to use a subfolder within the input folders, replace subfolder_name. Otherwise use "".
 # A subfolder will also be created in the output folder
 
-subfolder_name = "240131/"
+subfolder_name = "subfoldername/"
 fitcsv_path = "FitSDKRelease_21.158.00" # Path to FitSDK (Download: https://developer.garmin.com/fit/fitcsvtool/)
 
 # Get .fit filename
@@ -17,14 +17,12 @@ fit_path = f"./input/fit/{subfolder_name}"
 fit_file = [f for f in listdir(fit_path) if isfile(join(fit_path, f))]
 for f in fit_file:
     if not f.endswith(".fit"): fit_file.remove(f)
-print(fit_file)
 
 # Get ecglogger filenames
 ecg_path = f"./input/ecglogger/{subfolder_name}"
 ecg_file = [f for f in listdir(ecg_path) if isfile(join(ecg_path, f))]
 for f in ecg_file:
     if not f.endswith(".csv"): ecg_file.remove(f)
-print(ecg_file)
 
 # Parse and merge ecglogger csv records
 # Garmin Epoch Time: 1989–12–31T00:00:00Z (https://developer.garmin.com/fit/cookbook/decoding-activity-files/)
