@@ -176,7 +176,10 @@ FitSDKRelease_*/
 # Personal files
 input/.*
 input/fit/*
+!input/fit/.gitkeep
 input/ecglogger/*
+!input/ecglogger/.gitkeep
 output/*
+!output/.gitkeep
 
 .DS_Store
