@@ -11,7 +11,6 @@ from datetime import datetime
 
 subfolder_name = "240131/"
 fitcsv_path = "FitSDKRelease_21.158.00" # Path to FitSDK (Download: https://developer.garmin.com/fit/fitcsvtool/)
-# timezone = timezone("Europe/Berlin")
 
 # Get .fit filename
 fit_path = f"./input/fit/{subfolder_name}"
@@ -28,7 +27,7 @@ for f in ecg_file:
 print(ecg_file)
 
 # Parse and merge ecglogger csv records
-# Garmin Epoch Time: 1989–12–31T00:00:00Z (https://developer.garmin.com/fit/cookbook/decoding-activity-files/#:~:text=Timestamps%20in%20FIT%20messages%20are,in%20the%20user's%20local%20timezone.)
+# Garmin Epoch Time: 1989–12–31T00:00:00Z (https://developer.garmin.com/fit/cookbook/decoding-activity-files/)
 
 def convert_ecg_timestamp_to_zwift_timestamp(ecg_timestamp):
     garmin_epoch_start = datetime(1989, 12, 31, 0, 0, 0)
