@@ -9,7 +9,7 @@ from datetime import datetime
 # If you want to use a subfolder within the input folders, replace subfolder_name. Otherwise use "".
 # A subfolder will also be created in the output folder
 
-subfolder_name = "subfoldername/"
+subfolder_name = f"{input("Enter subfolder name -")}/"
 fitcsv_path = "FitSDKRelease_21.158.00" # Path to FitSDK (Download: https://developer.garmin.com/fit/fitcsvtool/)
 
 # Get .fit filename
@@ -72,7 +72,7 @@ for row in zwift_rows:
                     i += 1
                     continue
 
-# Calcualte and enter average and max heart rate
+# Calculate and enter average and max heart rate
 average_hr = sum(hr_values) // len(hr_values)
 max_hr = max(hr_values)
 
@@ -91,7 +91,8 @@ for row in zwift_rows:
     for i in range(len(row)):
         row[i] = str(row[i]).strip().replace('"', '')
 
-output_path = "./output/hr.csv"
+output_path = f"./output/{subfolder_name}{fit_file[0].replace(".fit","_with_heartrate.csv")}"
+system(f"mkdir -p ./output/{subfolder_name}")
 with open(output_path, "w") as csvfile:
     writer = csv.writer(csvfile, quoting=csv.QUOTE_MINIMAL)
     for row in zwift_rows:
