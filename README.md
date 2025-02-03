@@ -1,9 +1,10 @@
 # ecglogger_to_zwift
 
-Adds heart rate data from ECGlogger records to Zwift activity (.fit)
+Adds heart rate data from ECGlogger (https://www.ecglogger.com/) records to Zwift (https://www.zwift.com/) activity (.fit)
 
 ## **Next Steps:**
 
+* Bug: when running the program twice, csv in input is bring used instead of .fit
 * Logging implementation
 * Error handling
 * Testing
